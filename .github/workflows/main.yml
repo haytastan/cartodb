@@ -27,7 +27,10 @@ jobs:
 
       - name: Copy ci files to root
         run: cp ci-tools/repos/${{ github.event.repository.name }}/* .
-
+      
+      - name: Move config files to config dir
+        run: cp app_config.yml config/app_config.yml && cp database.yml config/database.yml
+        
       - name: Cache 'vendor' folder for bundle install
         uses: actions/cache@v1
         with:
