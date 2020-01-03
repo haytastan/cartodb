@@ -1,7 +1,7 @@
 name: cartodb backend PR Tests
 on: push
 jobs:
-  central-tests:
+  cartodb-tests:
     runs-on: ubuntu-16.04
     steps:
 
