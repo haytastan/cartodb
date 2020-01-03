@@ -24,8 +24,7 @@ namespace :cartodb do
         end
         Rake::Task['db:create'].invoke &&
         Rake::Task['db:migrate'].invoke &&
-        Rake::Task['cartodb:db:create_publicuser'].invoke &&
-        Rake::Task['cartodb:db:create_federated_server'].invoke
+        Rake::Task['cartodb:db:create_publicuser'].invoke
       else
         system("rake cartodb:test:prepare RAILS_ENV=test") || raise("Something went wrong")
       end
