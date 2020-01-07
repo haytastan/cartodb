@@ -38,7 +38,7 @@ jobs:
         run: cp ci-tools/repos/${{ github.event.repository.name }}/* .
 
       - name: Move config files to config dir
-        run: cp app_config.yml config/app_config.yml && cp database.yml config/database.yml
+        run: cp app_config.yml config/app_config.yml && cp database.yml config/database.yml && cp lib/assets/javascripts/cdb/secrets.example.json lib/assets/javascripts/cdb/secrets.json && cp script/ci/* .
 
       - name: Cache 'vendor' folder for bundle install
         uses: actions/cache@v1
@@ -52,4 +52,5 @@ jobs:
         run: docker-compose up -d
 
       - name: Run Tests (make check)
-        run: docker-compose exec -T builder make check
+        run: docker-compose exec -T builder sh -c "make prepare-test-db && runParallelTests.sh 1"
+
