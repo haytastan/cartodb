@@ -55,4 +55,4 @@ jobs:
         run: docker ps -a
 
       - name: Run Tests (make check)
-        run: docker exec -it builder_! bash -c "createdb -T template0 -O postgres -U postgres -E UTF8 template_postgis && ldconfig && psql -U postgres template_postgis -c 'CREATE EXTENSION postgis;CREATE EXTENSION postgis_topology;CREATE EXTENSION plpythonu;' &&  cp script/ci/* . && make prepare-test-db && /bin/bash runParallelTests.sh 2"
+        run: docker exec -it builder_1 bash -c "createdb -T template0 -O postgres -U postgres -E UTF8 template_postgis && ldconfig && psql -U postgres template_postgis -c 'CREATE EXTENSION postgis;CREATE EXTENSION postgis_topology;CREATE EXTENSION plpythonu;' &&  cp script/ci/* . && make prepare-test-db && /bin/bash runParallelTests.sh 2"
