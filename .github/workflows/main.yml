@@ -51,7 +51,7 @@ jobs:
       - name: Start docker-compose services
         run: docker-compose up -d
 
-      - name: docker ps -a
+      - name: docker ps 
         run: docker ps -a
 
       - name: Run Tests (make check)
