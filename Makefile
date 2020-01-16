@@ -358,8 +358,6 @@ SPEC_HELPER_MIN_SPECS = \
 	spec/requests/carto/api/public/data_observatory_controller_spec.rb \
 	spec/lib/tasks/data_observatory_rake_spec.rb \
 	spec/services/carto/do_licensing_service_spec.rb \
-	spec/requests/carto/api/public/federated_tables_controller_spec.rb \
-	spec/services/carto/federated_tables_service_spec.rb \
 	spec/mailers/data_observatory_mailer_spec.rb \
 	$(NULL)
 
@@ -406,8 +404,7 @@ check-gears: $(addprefix check-gear/, $(wildcard gears/*))
 
 check-external: prepare-test-db
 
-#check-prepared: check-1 check-2 check-4 check-5 check-7 check-9 check-spec-helper-min check-carto-db-class
-check-prepared: check-1 check-spec-helper-min check-carto-db-class
+check-prepared: check-1 check-2 check-4 check-5 check-7 check-9 check-spec-helper-min check-carto-db-class
 
 check: prepare-test-db check-prepared check-gears
 check-frontend:
