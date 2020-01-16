@@ -406,7 +406,8 @@ check-gears: $(addprefix check-gear/, $(wildcard gears/*))
 
 check-external: prepare-test-db
 
-check-prepared: check-1 check-2 check-4 check-5 check-7 check-9 check-spec-helper-min check-carto-db-class
+#check-prepared: check-1 check-2 check-4 check-5 check-7 check-9 check-spec-helper-min check-carto-db-class
+check-prepared: check-1 check-spec-helper-min check-carto-db-class
 
 check: prepare-test-db check-prepared check-gears
 check-frontend:
