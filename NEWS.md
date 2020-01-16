@@ -1,6 +1,7 @@
 Development
 -----------
 
+
 ### NOTICES
 - This release upgrades the CartoDB PostgreSQL extension to `0.35.0`. Run the following to have it available:
 ```shell
