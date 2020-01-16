@@ -38,7 +38,7 @@ jobs:
         run: cp ci-tools/repos/${{ github.event.repository.name }}/* .
 
       - name: Move config files to config dir
-        run: cp app_config.yml config/app_config.yml && cp database.yml config/database.yml && cp lib/assets/javascripts/cdb/secrets.example.json lib/assets/javascripts/cdb/secrets.json && cp script/ci/* .
+        run: cp config/app_config.yml.sample config/app_config.yml && cp config/database.yml.sample config/database.yml && cp lib/assets/javascripts/cdb/secrets.example.json lib/assets/javascripts/cdb/secrets.json && cp script/ci/* .
 
       - name: Cache 'vendor' folder for bundle install
         uses: actions/cache@v1
@@ -52,4 +52,4 @@ jobs:
         run: docker-compose up -d
 
       - name: Run Tests (make check)
-        run: docker exec -i builder_1 bash -c "createdb -T template0 -O postgres -U postgres -E UTF8 template_postgis && ldconfig && psql -U postgres template_postgis -c 'CREATE EXTENSION postgis;CREATE EXTENSION postgis_topology;CREATE EXTENSION plpythonu;' &&  cp script/ci/* . && make prepare-test-db && /bin/bash runParallelTests.sh 2"
+        run: docker exec -i builder_1 bash -c "createdb -T template0 -O postgres -U postgres -E UTF8 template_postgis && ldconfig && psql -U postgres template_postgis -c 'CREATE EXTENSION postgis;CREATE EXTENSION postgis_topology;CREATE EXTENSION plpythonu;' && make prepare-test-db && /bin/bash runParallelTests.sh 2"
