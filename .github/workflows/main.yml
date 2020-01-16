@@ -49,7 +49,7 @@ jobs:
             ${{ runner.os }}-gem-
 
       - name: Start docker-compose services
-        run: docker-compose up -d
+        run: docker-compose up
 
       - name: docker ps -a
         run: docker ps -a
