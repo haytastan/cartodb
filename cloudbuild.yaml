@@ -5,6 +5,13 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['pull', 'gcr.io/cartodb-on-gcp-ci-testing/cartodb-postgresql-base:10' ]
 
-- name: 'gcr.io/cloud-builders/git'
-  args: ['submodule', 'update', '--init', '--recursive']
+- name: 'ubuntu'
+  args: ['ls', '-la']
+
+- name: 'ubuntu'
+  args: ['ls', 'lib/sql']
+
+
+#- name: 'gcr.io/cloud-builders/git'
+#  args: ['submodule', 'update', '--init', '--recursive']
 
