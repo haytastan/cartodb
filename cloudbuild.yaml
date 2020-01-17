@@ -1,14 +1,14 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['pull', 'gcr.io/cartodb-on-gcp-ci-testing/cartodb-base:latest' ]
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: ['pull', 'gcr.io/cartodb-on-gcp-ci-testing/cartodb-base:latest' ]
 
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['pull', 'gcr.io/cartodb-on-gcp-ci-testing/cartodb-postgresql-base:10' ]
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: ['pull', 'gcr.io/cartodb-on-gcp-ci-testing/cartodb-postgresql-base:10' ]
 
-- name: 'ubuntu'
-  args: ['apt', 'install', 'git']
+#- name: 'ubuntu-git'
+#  args: ['apt', 'install', 'git']
 
-- name: 'ubuntu'
+- name: 'ubuntu-git'
   args: ['git', 'submodule', 'update', '--init', '--recursive']
 
 - name: 'ubuntu'
