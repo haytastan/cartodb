@@ -5,10 +5,10 @@ steps:
 #- name: 'gcr.io/cloud-builders/docker'
 #  args: ['pull', 'gcr.io/cartodb-on-gcp-ci-testing/cartodb-postgresql-base:10' ]
 
-#- name: 'ubuntu-git'
-#  args: ['apt', 'install', 'git']
+- name: 'ubuntu'
+  args: ['apt', 'update', '&&', 'apt', 'install', 'git']
 
-- name: 'ubuntu-git'
+- name: 'ubuntu'
   args: ['git', 'submodule', 'update', '--init', '--recursive']
 
 - name: 'ubuntu'
