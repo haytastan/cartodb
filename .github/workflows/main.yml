@@ -20,7 +20,7 @@ jobs:
           service_account_key: ${{ secrets.GCS }}
 
       - name: Pull base image
-        run: gcloud auth configure-docker && docker pull gcr.io/cartodb-on-gcp-ci-testing/cartodb-base:latest && docker pull gcr.io/cartodb-on-gcp-ci-testing/cartodb-postgresql-base:10 && docker pull gcr.io/cartodb-on-gcp-ci-testing/cartodb_intermediate
+        run: gcloud auth configure-docker && docker pull gcr.io/cartodb-on-gcp-ci-testing/cartodb-base:latest && docker pull gcr.io/cartodb-on-gcp-ci-testing/cartodb-postgresql-base:10
 
       - name: Checkout current repository
         uses: actions/checkout@v1
