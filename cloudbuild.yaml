@@ -6,12 +6,12 @@ steps:
   args: ['pull', 'gcr.io/cartodb-on-gcp-ci-testing/cartodb-postgresql-base:10' ]
 
 - name: 'ubuntu'
-  args: ['ls', '-la']
+  args: ['apt', 'install', 'git']
+
+- name: 'ubuntu'
+  args: ['git', 'submodule', 'update', '--init', '--recursive']
 
 - name: 'ubuntu'
   args: ['ls', 'lib/sql']
 
-
-#- name: 'gcr.io/cloud-builders/git'
-#  args: ['submodule', 'update', '--init', '--recursive']
 
